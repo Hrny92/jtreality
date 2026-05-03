@@ -45,12 +45,12 @@ const services = [
 //             -π      → -Z back  faces camera → Service 3 (URADY)
 //             -3π/2   → -X left  faces camera → Service 4 (REALITY)
 const CUBE_FACES = [
-  '/cube/POZEMKY.png',     // idx 0  +X right  → S2
-  '/cube/REALITY.jpg',     // idx 1  -X left   → S4
-  '/cube/DEVELOPMENT.png', // idx 2  +Y top    → S1 (repeat, all sides covered)
-  '/cube/POZEMKY.png',     // idx 3  -Y bottom → S2 (repeat, all sides covered)
-  '/cube/DEVELOPMENT.png', // idx 4  +Z front  → S1
-  '/cube/URADY.png',       // idx 5  -Z back   → S3
+  '/CUBE/POZEMKY.png',     // idx 0  +X right  → S2
+  '/CUBE/REALITY.jpg',     // idx 1  -X left   → S4
+  '/CUBE/DEVELOPMENT.png', // idx 2  +Y top    → S1 (repeat, all sides covered)
+  '/CUBE/POZEMKY.png',     // idx 3  -Y bottom → S2 (repeat, all sides covered)
+  '/CUBE/DEVELOPMENT.png', // idx 4  +Z front  → S1
+  '/CUBE/URADY.png',       // idx 5  -Z back   → S3
 ]
 
 const SERVICE_ROT_Y = [
