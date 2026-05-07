@@ -63,10 +63,14 @@ export default function ChatWidget() {
       })
 
       const data = await res.json()
+      if (!res.ok || data.error) {
+        throw new Error(data.error ?? `HTTP ${res.status}`)
+      }
       const reply = data.reply ?? 'Omlouvám se, zkuste to prosím znovu.'
       setMessages([...newMessages, { role: 'assistant', text: reply }])
-    } catch {
-      setMessages([...newMessages, { role: 'assistant', text: 'Chyba připojení. Zkuste to prosím znovu.' }])
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Chyba připojení.'
+      setMessages([...newMessages, { role: 'assistant', text: `⚠️ ${msg}` }])
     } finally {
       setLoading(false)
     }

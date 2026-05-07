@@ -145,9 +145,11 @@ export async function POST(req: NextRequest) {
 
     const data = await geminiRes.json() as GeminiResponse
 
-    if (data.error) {
-      console.error('Gemini error:', data.error)
-      return NextResponse.json({ error: data.error.message }, { status: 500 })
+    if (!geminiRes.ok || data.error) {
+      console.error('Gemini error:', JSON.stringify(data.error))
+      console.error('Gemini HTTP status:', geminiRes.status, '| model:', model)
+      const msg = data.error?.message ?? `Gemini HTTP ${geminiRes.status}`
+      return NextResponse.json({ error: msg }, { status: 500 })
     }
 
     const reply = data.candidates?.[0]?.content?.parts?.[0]?.text ?? 'Omlouvám se, zkuste to prosím znovu.'
