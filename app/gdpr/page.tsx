@@ -33,7 +33,7 @@ export default function GdprPage() {
             Ochrana osobních údajů
             <br /><span className="text-gold">& Zásady cookies</span>
           </h1>
-          <p className="text-white/35 mt-4 text-sm">Platné od 1. 1. 2024 · Poslední aktualizace: 1. 1. 2024</p>
+          <p className="text-white/35 mt-4 text-sm">Platné od 22. 10. 2010 · Poslední aktualizace: 1. 5. 2025</p>
         </div>
       </div>
 
@@ -45,12 +45,14 @@ export default function GdprPage() {
             Správcem osobních údajů je fyzická osoba — realitní makléř:
           </p>
           <div className="border border-white/8 p-6 space-y-2">
-            <p><span className="text-white/30">Jméno:</span> <span className="text-white/70">Jiří (Jura) Temer</span></p>
+            <p><span className="text-white/30">Jméno:</span> <span className="text-white/70">Juraj Temer</span></p>
             <p><span className="text-white/30">Obchodní firma:</span> <span className="text-white/70">JT Reality</span></p>
-            <p><span className="text-white/30">Sídlo:</span> <span className="text-white/70">[Doplnit adresu]</span></p>
-            <p><span className="text-white/30">E-mail:</span> <span className="text-white/70">[Doplnit e-mail]</span></p>
-            <p><span className="text-white/30">Telefon:</span> <span className="text-white/70">[Doplnit telefon]</span></p>
-            <p><span className="text-white/30">IČO:</span> <span className="text-white/70">[Doplnit IČO]</span></p>
+            <p><span className="text-white/30">Sídlo:</span> <span className="text-white/70">Všehlušická 1665, 274 01 Slaný</span></p>
+            <p><span className="text-white/30">E-mail:</span> <span className="text-white/70">info@jtreality.cz</span></p>
+            <p><span className="text-white/30">Telefon:</span> <span className="text-white/70">+420 704 011 022</span></p>
+            <p><span className="text-white/30">IČO:</span> <span className="text-white/70">87390523</span></p>
+            <p><span className="text-white/30">Právní forma:</span> <span className="text-white/70">Fyzická osoba podnikající dle živnostenského zákona (OSVČ)</span></p>
+            <p><span className="text-white/30">Finanční úřad:</span> <span className="text-white/70">Finanční úřad ve Slaném</span></p>
           </div>
         </Section>
 
@@ -123,7 +125,7 @@ export default function GdprPage() {
             <li><strong className="text-white/70">Právo odvolat souhlas</strong> — udělený souhlas lze kdykoli odvolat (nemá zpětný účinek).</li>
           </ul>
           <p>
-            Žádost uplatněte e-mailem na adrese [Doplnit e-mail]. Odpovíme do 30 dnů.
+            Žádost uplatněte e-mailem na adrese info@jtreality.cz. Odpovíme do 30 dnů.
             Máte rovněž právo podat stížnost u Úřadu pro ochranu osobních údajů (
             <a href="https://www.uoou.cz" className="text-gold hover:underline" target="_blank" rel="noopener">www.uoou.cz</a>
             ).

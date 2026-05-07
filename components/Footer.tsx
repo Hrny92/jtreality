@@ -10,10 +10,10 @@ const navLinks = [
 ]
 
 const contactItems = [
-  { label: 'Telefon', value: '[Doplnit telefon]', href: 'tel:+420000000000' },
-  { label: 'E-mail',  value: '[Doplnit e-mail]',  href: 'mailto:info@jtreality.cz' },
-  { label: 'Web',     value: 'www.jtreality.cz',  href: 'https://www.jtreality.cz' },
-  { label: 'Sídlo',   value: '[Doplnit adresu]',  href: null },
+  { label: 'Telefon', value: '+420 704 011 022',           href: 'tel:+420704011022' },
+  { label: 'E-mail',  value: 'info@jtreality.cz',          href: 'mailto:info@jtreality.cz' },
+  { label: 'Web',     value: 'www.jtreality.cz',           href: 'https://www.jtreality.cz' },
+  { label: 'Sídlo',   value: 'Všehlušická 1665, 274 01 Slaný', href: null },
 ]
 
 export default function Footer() {
@@ -93,10 +93,11 @@ export default function Footer() {
 
           {/* Licence / registrace makléře */}
           <div className="border border-white/8 p-4">
-            <p className="text-[10px] tracking-[0.2em] uppercase text-white/20 mb-1">Realitní makléř</p>
+            <p className="text-[10px] tracking-[0.2em] uppercase text-white/20 mb-1">Podnikatel</p>
             <p className="text-xs text-white/35 leading-relaxed">
-              Člen České komory realitních kanceláří.<br />
-              Licence: [Doplnit č. licence]
+              Juraj Temer, OSVČ<br />
+              IČO: 87390523<br />
+              Finanční úřad ve Slaném
             </p>
           </div>
         </div>
