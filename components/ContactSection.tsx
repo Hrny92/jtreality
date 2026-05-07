@@ -14,7 +14,9 @@ export default function ContactSection() {
     phone: '',
     message: '',
   })
-  const [sent, setSent] = useState(false)
+  const [sent,    setSent]    = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error,   setError]   = useState('')
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -40,9 +42,24 @@ export default function ContactSection() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSent(true)
+    setLoading(true)
+    setError('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error ?? 'Chyba')
+      setSent(true)
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Nepodařilo se odeslat zprávu. Zkuste to prosím znovu.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -129,11 +146,16 @@ export default function ContactSection() {
                   />
                 </div>
 
+                {error && (
+                  <p className="text-red-400 text-sm">{error}</p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-gold text-dark py-4 font-display font-bold tracking-[0.15em] uppercase text-xs hover:bg-gold-light transition-colors duration-300 mt-2"
+                  disabled={loading}
+                  className="w-full bg-gold text-dark py-4 font-display font-bold tracking-[0.15em] uppercase text-xs hover:bg-gold/90 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300 mt-2"
                 >
-                  Odeslat zprávu
+                  {loading ? 'Odesílám…' : 'Odeslat zprávu'}
                 </button>
               </form>
             )}
